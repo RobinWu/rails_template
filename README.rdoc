@@ -1,8 +1,9 @@
-== Requirement
-
-   http://m.onkey.org/2008/12/4/rails-templates
-
 == Command
 
    rails <project_name> -d mysql -m http://github.com/RobinWu/rails_template/raw/master/rails_template.rb
    rails <project_name> -d mysql -m http://github.com/RobinWu/rails_template/raw/master/simple_rails_template.rb
+
+==  Links
+
+* http://m.onkey.org/2008/12/4/rails-templates
+* http://github.com/jeffersongirao/my_rails_templates
