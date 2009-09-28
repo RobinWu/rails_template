@@ -5,3 +5,4 @@
 == Command
 
    rails <project_name> -d mysql -m http://github.com/RobinWu/rails_template/raw/master/rails_template.rb
+   rails <project_name> -d mysql -m http://github.com/RobinWu/rails_template/raw/master/simple_rails_template.rb
