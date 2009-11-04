@@ -86,7 +86,7 @@ plugin 'activerecord_dom_helper', :git => 'git://github.com/alvin2ye/activerecor
 plugin 'inherited_resources', :git => 'git://github.com/josevalim/inherited_resources.git'
 plugin 'dry_view', :git => 'git://github.com/alvin2ye/dry_view.git'
 plugin 'recordselect', :git => 'git://github.com/cainlevy/recordselect.git'
-plugin 'number_to_chinese_amount_in_words_helper', :git => 'git://github.com/RobinWu/number_to_chinese_amount_in_words_helper.git'
+plugin 'number_to_capital_zh', :git => 'git://github.com/RobinWu/number_to_capital_zh.git'
 
 git :add => "."
 git :commit => "-a -m 'add plugins'"
