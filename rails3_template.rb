@@ -6,10 +6,6 @@
 run 'rm public/index.html'
 run "rm public/images/rails.png"
 run "rm README"
-run "rm doc/README_FOR_APP"
-run "rm public/favicon.ico"
-run "rm public/robots.txt"
-run 'rm -rf test/'
 
 # config database
 app = app_name
