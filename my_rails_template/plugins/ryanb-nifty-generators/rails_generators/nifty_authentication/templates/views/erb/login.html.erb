@@ -1,0 +1,124 @@
+<%% title "Log in" %>
+
+<%% content_for :head do -%>
+<style type="text/css">
+  #bd {
+    height: 600px;
+    text-align: center;
+  }
+  body {
+    background:#E5E5E5 none repeat scroll 0%;
+  }
+  p {
+    padding: 5px;
+  }
+  a:link,
+  a:visited {
+    color: blue;
+  }
+  a:hover {
+    background-color: blue;
+    color: white;
+  }
+  div.login_form {
+    background:#FFFFFF none repeat scroll 0% 50%;
+    border: 10px solid #CCCCCC;
+    margin: 0pt auto;
+    text-align: left;
+    width: 400px;
+    padding: 20px;
+  }
+  label {
+    padding: 2px;
+  }
+  div.login_form input {
+    width: 200px;
+  }
+  div.login_form input.submit {
+    width: auto;
+  }
+  div.login_form p.login_info label,
+  div.login_form p.open_id_info label {
+    float: left;
+    text-align: right;
+    font-weight: bold;
+    width: 110px;
+  }
+  div.remember_me_and_login {
+    text-align: center;
+    margin: 0 auto;
+  }
+  div.title {
+    margin: 60px 0pt 15px;
+  }
+  div.flash {
+    border:1px solid gray;
+    margin-bottom:12px;
+    padding:5px 10px;
+    text-align:center;
+    font-weight: bold;
+  }
+  div.flash.notice {
+    background: #D2FBD7 none repeat scroll 0 0;
+    border-color: #8EED9D;
+    color:green;
+  }
+  div.flash.error {
+    background: RGB(255,202,202) none repeat scroll 0 0;
+    border-color: RGB(255,102,102);
+    color:red;
+  }
+  div#form_bottom a:link,
+  div#form_bottom a:visited,
+  #back_to_normal_login a:link,
+  #back_to_normal_login a:visited {
+    color: #666666;
+  }
+  div#form_bottom a:hover,
+  #back_to_normal_login a:hover {
+    background: #666666 none repeat scroll 0%;
+    color:#FFFFFF;
+  }
+  div#form_bottom {
+    margin: 0pt auto;
+    text-align: right;
+    width: 480px;
+    padding: 3px 0px;
+  }
+  div.logo img {
+    border: 5px solid white;
+  }
+</style>
+<%% end -%>
+
+<div id="doc3">
+  <div id="hd">
+    &nbsp;
+  </div>
+  <div id="bd">
+    <div class="title">
+      <div class="logo">
+      <%%= image_tag '/images/logo.png' -%>
+      </div>
+    </div>
+    <div class="login_form">
+      <%% form_tag <%= sessions_underscore_name %>_path do %>
+        <p class="login_info">
+          <%%= label_tag :login, "用户名/邮件地址:" %>
+          <%%= text_field_tag :login, params[:login], :size => 20 %>
+        </p>
+        <p class="login_info">
+          <%%= label_tag :password, "密码:" %>
+          <%%= password_field_tag :password, nil, :size => 20 %>
+        </p>
+        <div class="remember_me_and_login">
+          <p><%%= submit_tag "登陆", :class => 'submit' %><%%= link_to "注册", signup_path %></p>
+        </div>
+      <%% end %>
+    </div>
+  </div>
+  <div id="ft">
+    &nbsp;
+  </div>
+</div>
+<%%= javascript_tag "document.getElementById('login').focus();" %>

@@ -1,0 +1,19 @@
+<%% form_for @<%= singular_name %> do |f| %>
+  <div class="form-content">
+    <%%= f.error_messages %>
+    <div class="form-attributes">
+    <%- for attribute in attributes -%>
+      <p>
+        <%%= f.label :<%= attribute.name %>, <%= class_name %>.human_attribute_name('<%= attribute.name %>') %>:
+        <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %>
+      </p>
+    <%- end -%>
+    </div>
+    <p class="submit">
+      <%%= f.submit "保存" %> |
+      <%- if action? :index -%>
+      <%%= link_to "返回", <%= plural_name %>_path %>
+      <%- end -%>
+    </p>
+  </div>
+<%% end %>

@@ -1,0 +1,20 @@
+<h1>查看<%%= <%= class_name %>.human_name -%></h1>
+
+<%- for attribute in attributes -%>
+<p>
+  <strong><%%= <%= class_name %>.human_attribute_name('<%= attribute.name %>') %>:</strong>
+  <%%=h @<%= singular_name %>.<%= attribute.name %> %>
+</p>
+<%- end -%>
+
+<p>
+<%- if action? :edit -%>
+  <%%= link_to "编辑", edit_<%= singular_name %>_path(@<%= singular_name %>) %> |
+<%- end -%>
+<%- if action? :destroy -%>
+  <%%= link_to "删除", @<%= singular_name %>, :confirm => '你确定删除吗?', :method => :delete %> |
+<%- end -%>
+<%- if action? :index -%>
+  <%%= link_to "查看列表", <%= plural_name %>_path %>
+<%- end -%>
+</p>

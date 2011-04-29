@@ -1,0 +1,27 @@
+div#nav {
+  height: 100%;
+}
+#bd {
+  height: auto !important;
+  height: 400px;
+}
+div#tabs {
+  margin-bottom: -6px;
+}
+div#tabs ul li {
+  margin-top:4px !important; /* for ie7 */
+  margin-bottom:-1px !important; /* for ie7 */
+  margin-top:2px;
+  margin-bottom:-6px;
+}
+div#tabs ul li a {
+  display:block;
+}
+div#tabs ul li a:link,
+div#tabs ul li a:visited,
+div#tabs ul li a:active {
+  border: 2px;
+}
+div.progress-bar {
+  border:none;
+}

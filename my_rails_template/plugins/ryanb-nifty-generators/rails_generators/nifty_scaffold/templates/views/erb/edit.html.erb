@@ -1,0 +1,12 @@
+<h1>编辑<%% <%= class_name %>.human_name -%></h1>
+<%= render_form %>
+<%- if actions? :show, :index -%>
+<p>
+<%- if action? :show -%>
+  <%%= link_to "查看", @<%= singular_name %> %> |
+<%- end -%>
+<%- if action? :index -%>
+  <%%= link_to "查看列表", <%= plural_name %>_path %>
+<%- end -%>
+</p>
+<%- end -%>

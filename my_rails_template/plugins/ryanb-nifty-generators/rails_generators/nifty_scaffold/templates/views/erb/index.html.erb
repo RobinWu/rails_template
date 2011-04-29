@@ -1,0 +1,42 @@
+<div class="c-hd">
+  <h1><%%= <%= class_name %>.human_name -%></h1>
+  <div class="clear_both"></div>
+</div>
+<div class="c-bd">
+  <table class="c-list" width="100%">
+    <tr>
+    <%- for attribute in attributes -%>
+      <th><%%= <%= class_name %>.human_attribute_name('<%= attribute.name %>') -%></th>
+    <%- end -%>
+      <th>&nbsp;</th>
+    </tr>
+    <%% for <%= singular_name %> in @<%= plural_name %> %>
+      <tr class="<%%= cycle("odd", "even") %>">
+      <%- for attribute in attributes -%>
+        <td><%%=h <%= singular_name %>.<%= attribute.name %> %></td>
+      <%- end -%>
+        <td class="actions">
+        <%- if action? :show -%>
+          <%%= link_to "查看", <%= singular_name %> %>
+        <%- end -%>
+        <%- if action? :edit -%>
+          <%%= link_to "编辑", edit_<%= singular_name %>_path(<%= singular_name %>) %>
+        <%- end -%>
+        <%- if action? :destroy -%>
+          <%%= link_to "删除", <%= singular_name %>, :confirm => "你确定删除吗?", :method => :delete %>
+        <%- end -%>
+        </td>
+      </tr>
+    <%% end %>
+  </table>
+  <%%= simple_paginate @<%= plural_name %> %>
+</div>
+
+<%- if action? :new -%>
+  <%%- content_for :sbar  do -%>
+    <span class="btn">
+      <%%= link_to "新建#{<%= class_name %>.human_name}", new_<%= singular_name %>_path %>
+    </span>
+  <%%- end -%>
+<%- end -%>
+
